@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillsShit</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/advertisements.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Rajdhani&display=swap" rel="stylesheet">
+    <body>
+    <div id="container">
+        <div id="mainmenu-wrapper">
+            <div id="topbar-container">
+                <div id="topbar-options">
+                    <div class="topbar-options-child topbar-options-child-opened">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <div class="topbar-options-child">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <div class="topbar-options-child">
+                        <i class="fa-solid fa-power-off"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="friends-container">
+                <div id="friends-rank-parent">
+                    <div id="friends-rank-child">
+                        <img id="friends-rank-img" draggable="false" src="assets/avatars/avatar1.png">
+                        <div class="rank friends-menu-rank rank-red">
+                            <span class="rank-span">17000</span>
+                        </div>
+                        <span id="friends-rank-child-span">Win 3 more for promotion match.</span>
+                    </div>
+                </div>
+                <span class="friends-title">Friend requests (1)</span>
+                <div class="friends-parent invitations">
+                    <div class="friends-child">
+                        <img draggable="false" class="friends-child-avatar" src="assets/avatars/avatar1.png">
+                        <div class="friends-child-name-parent">
+                            <span>kamsdmkpm msdmkpm msdmkpm msdmkpm msdmkpm msdmkpm mkasd</span>
+                        </div>
+                        <div class="invitation-actions">
+                            <div class="invitation-btn">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="invitation-btn">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span class="friends-title">Online (2)</span>
+                <div class="friends-parent">
+                    <div class="friends-child">
+                        <img draggable="false" class="friends-child-avatar" src="assets/avatars/avatar1.png">
+                        <div class="friends-child-name-parent">
+                            <span>kamsdmkpm msdmkpm msdmkpm msdmkpm msdmkpm msdmkpm mkasd</span>
+                        </div>
+                        <div class="friends-child-invite">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="friends-child">
+                        <img draggable="false" class="friends-child-avatar" src="assets/avatars/avatar1.png">
+                        <div class="friends-child-name-parent">
+                            <span>kamsdmkpm mkasd</span>
+                        </div>
+                        <div class="friends-child-invite">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                <span class="friends-title">Offline (5)</span>
+                <div class="friends-parent">
+                    <div class="friends-child">
+                        <img draggable="false" class="friends-child-avatar" src="assets/avatars/avatar1.png">
+                        <div class="friends-child-name-parent">
+                            <span>kamsdmkpm mkasd</span>
+                        </div>
+                        <div class="friends-child-invite">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="friends-child">
+                        <img draggable="false" class="friends-child-avatar" src="assets/avatars/avatar1.png">
+                        <div class="friends-child-name-parent">
+                            <span>kamsdmkpm mkasd</span>
+                        </div>
+                        <div class="friends-child-invite">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="add-friends">
+                    <span id="add-friends-span">Feel like you dont have enough friends? Add more by their game tags.</span>
+                    <div id="add-friends-actions">
+                        <input id="add-friends-input" placeholder="User tag" type="text">
+                        <span id="add-friends-btn">Send request</span>
+                    </div>
+                    <span id="add-friends-copy">Copy my game tag</span>
+                </div>
+            </div>
+        </div>
+        <div id="ingame-wrapper">
+
+            <div id="players-wrapper">
+                <div id="players-container">
+                    <div class="players-parent">
+                        <div class="players-child player-orange">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-green">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-yellow">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-blue">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-purple">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                    </div>
+                    <div id="time-parent">
+                        <span id="time-span">3:10</span>
+                        <div id="score">
+                            <span id="score-ct">4</span>
+                            <span id="score-t">16</span>
+                        </div>
+                    </div>
+                    <div class="players-parent">
+                        <div class="players-child player-orange">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-green">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-yellow">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-blue">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                        <div class="players-child player-purple">
+                            <img draggable="false" src="assets/avatars/avatar1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="chat-wrapper">
+                <div id="chat-parent"></div>
+                <div id="chat-input-parent">
+                    <input autocomplete="off" id="chat-input" type="text" placeholder="Say to all">
+                    <span id="chat-send-btn">SEND</span>
+                </div>
+            </div>
+
+            <div id="console-wrapper">
+                <div id="console-header">
+                    Console
+                    <div id="console-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div id="console-body"></div>
+                <div id="console-footer">
+                    <input autocomplete="off" id="console-input" type="text" placeholder="Command">
+                </div>
+            </div>
+
+            <div id="sb-wrapper">
+                <div id="sb-header">
+                    <span id="sb-title">Scoreboard</span>
+                    <span id="sb-time">0:07</span>
+                </div>
+                <div id="sb-body">
+                    <table id="sb-table" class="table-ct">
+                        <tr>
+                            <th><i class="fa-solid fa-globe"></i></th>
+                            <th></th>
+                            <th>Money</th>
+                            <th>Kills</th>
+                            <th>Deaths</th>
+                            <th>HS%</th>
+                            <th>KD</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-orange"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr class="table-current-player-ct">
+                            <td>1000</td>
+                            <td class="player-green"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-yellow"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-blue"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-purple"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                    </table>
+                    <div id="sb-score">
+                        <span id="sb-ct">4</span>
+                        <span>-</span>
+                        <span id="sb-t">6</span>
+                    </div>
+                    <table id="sb-table" class="table-t">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr class="table-current-player-t">
+                            <td>1000</td>
+                            <td class="player-orange"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-green"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-yellow"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-blue"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td class="player-purple"><img src="assets/avatars/avatar1.png">Alfreds Futterkiste</td>
+                            <td>$16000</td>
+                            <td>35</td>
+                            <td>14</td>
+                            <td>30%</td>
+                            <td>1.23</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div id="hud-wrapper">
+                <div id="hud-parent">
+                    <span class="hud-text" id="hud-money">$16000</span>
+                    asd 
+                </div>
+            </div>
+            
+            <div id="killfeed"></div>
+        </div>
+    </div>
+</body>
+</html>

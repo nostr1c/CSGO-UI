@@ -1,0 +1,644 @@
+:root {
+    --t: #ecce51;
+    --ct: #71a6ff;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+    width: 0.3vw;
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: #222222;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url("https://cdn.cloudflare.steamstatic.com/apps/csgo/images/inferno/mid1-2.jpg?v=1") no-repeat;
+    background-size: cover;
+}
+#container {
+    display: block;
+}
+#mainmenu-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#ingame-wrapper {
+    display: block;
+}
+#players-wrapper {
+    display: block;
+}
+/* Topbar */
+#topbar-container {
+    background-color: #3b3b3b94;
+    height: 3vw;
+    backdrop-filter: blur(1vw);
+    background-image: url("../assets/bars-overlay.png");
+    box-shadow: #00000059 0px 5px 15px;
+}
+#topbar-options {
+    display: flex;
+    width: max-content;
+    height: 100%;
+}
+.topbar-options-child {
+    height: 100%;
+    width: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.topbar-options-child i {
+    font-size: 0.8vw;
+    color: #fff;
+}
+.topbar-options-child-opened i {
+    color: #5bbdff;
+}
+.topbar-options-child:hover {
+    background-color: #ffffff17;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+/* End of topbar */
+
+/* Friends */
+#friends-container {
+    position: absolute;
+    backdrop-filter: blur(1vw);
+    background-color: #3b3b3b94;
+    width: 15vw;
+    height: 100%;
+    right: 0;
+    z-index: -1;
+    user-select: none;
+    overflow: scroll;
+}
+#friends-rank-parent {
+    background-color: #0a0a0a21;
+    border-bottom: 0.1vw solid #3f3f3f;
+    height: max-content;
+    padding: 1vw 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#friends-rank-child {
+    text-align: center;
+}
+.friends-menu-rank {
+    margin: 0 auto;
+}
+#friends-rank-img {
+    width: 4.5vw;
+    height: 4.5vw;
+    margin-bottom: 0.35vw;
+    box-shadow: #00000059 0px 5px 15px;
+}
+.rank {
+    width: 4.5vw;
+    height: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skew(-10deg);
+    position: relative;
+    box-shadow: #0000003d 0px 3px 8px;
+}
+.rank::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.3vw;
+    height: 100%;
+}
+.rank::after {
+    content: "";
+    position: absolute;
+    left: 0.45vw;
+    top: 0;
+    width: 0.3vw;
+    height: 100%;
+}
+.rank-span {
+    font-family: 'Dela Gothic One';
+    font-size: 0.7vw;
+    margin-left: 0.45vw;
+    text-shadow: 0 0 2px black;
+}
+.rank-red {
+    background-color: #751313;
+    color: red;
+}
+.rank-red::before, .rank-red::after {
+    background-color: red;
+}
+#friends-rank-child-span {
+    font-size: 0.6vw;
+    color: #707070;
+    text-shadow: 0 0 2px black;
+}
+.friends-title {
+    display: block;
+    margin: 1vw 0 0 0.5vw;
+    color: #727272;
+    font-size: 0.8vw;
+}
+.friends-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1vw;
+}
+.friends-child {
+    background-color: #5858581f;
+    padding: 0.5vw;
+    border-bottom: 0.1vw solid #5555559c;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+}
+.friends-child-avatar {
+    width: 2vw;
+    height: 2vw;
+    box-shadow: #0000003d 0px 3px 8px;
+}
+.friends-child-name-parent {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 8vw;
+    color: #fff;
+    font-size: 0.7vw;
+}
+.invitations .friends-child .friends-child-name-parent {
+    width: 6vw;
+}
+.friends-child:hover {
+    background-color: #58585862;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.friends-child-invite {
+    width: 1.5vw;
+    height: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.friends-child-invite i {
+    color: #fff;
+    font-size: 0.8vw;
+}
+.friends-child-invite:hover, .invitation-btn:hover {
+    background-color: #ffffff17;
+    transition: all 0.3s;
+}
+.invitation-actions {
+    display: flex;
+    gap: 0.6vw;
+    margin-left: auto;
+}
+.invitation-btn {
+    width: 1.5vw;
+    height: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.invitation-btn i {
+    color: #fff;
+}
+#add-friends {
+    text-align: center;
+    text-wrap: balance;
+    margin-top: 1vw;
+}
+#add-friends span {
+    font-size: 0.6vw;
+    color: #a5a5a5;
+    text-shadow: 0 0 2px black;
+}
+#add-friends-actions {
+    margin-top: 0.4vw;
+}
+#add-friends-input {
+    width: 4vw;
+    outline: none;
+    border: none;
+    background-color: #8080805e;
+    padding: 0.2vw 0.5vw;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+#add-friends-input::placeholder {
+    color: rgb(134, 134, 134);
+    font-size: 0.7vw;
+}
+#add-friends-btn, #add-friends-copy {
+    color: #fff !important;
+    cursor: pointer;
+}
+#add-friends-btn:hover, #add-friends-copy:hover {
+    color: #d8d8d8 !important;
+    transition: all 0.3s;
+}
+#add-friends-copy {
+    margin-top: 0.75vw;
+}
+/* End of friends */
+
+/* Killfeed */
+#killfeed {
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25vw;
+    width: max-content;
+    user-select: none;
+}
+.kill {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.2vw 0.5vw;
+    width: max-content;
+    background: #00000080;
+    border: 0.12vw #b50000 solid;
+    border-radius: 0.2vw;
+    font-family: rajdhani,sans-serif!important;
+    font-weight: bold;
+    gap: 0.5vw;
+}
+#killfeed .weapon {
+    height: 1vw;
+}
+#killfeed .player {
+    font-size: 0.8vw;
+}
+#killfeed .player-parent {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 9vw;
+}
+.player-parent.ct {
+    color: var(--ct) !important;
+}
+.player-parent.t {
+    color: var(--t) !important;
+}
+/* Ingame hud */
+/* Players */
+#players-container {
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+.players-parent {
+    display: flex;
+    width: max-content;
+    height: max-content;
+}
+.players-child {
+    height: 2.5vw;
+}
+.players-child img {
+    width: 2.5vw;
+    height: 2.5vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.player-orange img {
+    border: 0.2vw solid #ffa500;
+}
+.player-green img {
+    border: 0.2vw solid #097e1c;
+}
+.player-yellow img {
+    border: 0.2vw solid #e5f31e;
+}
+.player-blue img {
+    border: 0.2vw solid #0077ff;
+}
+.player-purple img {
+    border: 0.2vw solid #6706a8;
+}
+#time-parent {
+    position: relative;
+    background: #0000005e;
+    width: 4vw;
+    height: 2.8vw;
+}
+#score {
+    display: flex;
+    gap: 0.8vw;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#time-span {
+    display: block;
+    text-align: center;
+    margin-top: 0.20vw;
+    font-size: 1vw;
+    font-weight: bolder;
+    color: #fff;
+    text-shadow: 0 0 0.2vw black;
+}
+#score span {
+    font-size: 0.9vw;
+    font-family: rajdhani,sans-serif!important;
+    font-weight: bolder;
+    text-shadow: 0 0 0.2vw black;
+}
+#score-ct {
+    color: var(--ct);
+}
+#score-t {
+    color: var(--t);
+}
+/* End of players  */
+
+/* Console  */
+#console-wrapper {
+    display: none;
+    width: 30vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    user-select: none;
+}
+#console-header {
+    background-color: #2c2c2c;
+    display: flex;
+    color: #fff;
+    padding: 0.3vw 0.5vw;
+    position: relative;
+    font-size: 0.9vw;
+}
+#console-close {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+    width: 3vw;
+    background-color: #d34343;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#console-close:hover {
+    background-color: #992727;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+#console-body {
+    background-color: #242424;
+    height: 15vw;
+    padding: 0.3vw 0.5vw;
+    color: gray;
+    font-size: 0.7vw;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    user-select: text;
+}
+#console-body span span {
+    color: #d1d1d1;
+}
+#console-footer {
+    background-color: #2c2c2c;
+    height: 1.5vw;
+}
+#console-input {
+    outline: none;
+    border: none;
+    background-color: #1b1b1b;
+    height: 1.5vw;
+    width: 11vw;
+    color: #fff;
+    padding: 0.3vw 0.5vw;
+    box-sizing: border-box;
+}
+/* End of console  */
+
+/* Chat  */
+#chat-wrapper {
+    display: block;
+    width: 20vw;
+    height: max-content;
+    position: absolute;
+    bottom: 5vw;
+    left: 1vw;
+    padding: 0.3vw;
+    user-select: none;
+}
+#chat-parent {
+    color: #fff;
+    width: 100%;
+    height: 12vw;
+    padding: 0 0.3vw;
+    box-sizing: border-box;
+    font-size: 0.65vw;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: hidden;
+}
+#chat-wrapper.opened {
+    background-color: #00000069;
+}
+#chat-wrapper.opened #chat-parent {
+    background-color: #00000083;
+    user-select: text;
+    overflow-y: scroll;
+}
+#chat-input-parent {
+    display: none;
+    background-color: #00000083;
+    margin-top: 0.3vw;
+    padding: 0.3vw;
+    user-select: none;
+}
+#chat-wrapper.opened #chat-input-parent {
+    display: block;
+}
+#chat-input {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #818181;
+    width: 15vw;
+    height: 1vw;
+    padding: 0 0.3vw;
+    font-size: 0.8vw;
+}
+#chat-send-btn {
+    float: right;
+    font-weight: bolder;
+    color: #818181;
+    margin-right: 0.4vw;
+    font-size: 0.8vw;
+}
+#chat-send-btn:hover {
+    cursor: pointer;
+    color: #505050;
+    transition: all 0.3s;
+}
+.chat-t {
+    color: var(--t);
+}
+.chat-ct {
+    color: var(--ct);
+}
+/* End of chat  */
+/* Scoreboard  */
+#sb-wrapper {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35vw;
+    height: max-content;
+    background-color: #131313f5;
+    user-select: none;
+    padding: 0.5vw 1vw;
+}
+#sb-header {
+    padding: 0.75vw;
+}
+#sb-title {
+    font-size: 0.8vw;
+    color: #8a8a8a;
+    text-shadow: 0 0 0.2vw black;
+}
+#sb-time {
+    float: right;
+    color: #8a8a8a;
+    font-size: 0.7vw;
+    text-shadow: 0 0 0.2vw black;
+}
+#sb-body {
+    padding: 0.75vw;
+}
+#sb-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+#sb-table tr th {
+    color: #8f8f8f;
+    text-shadow: 0 0 0.2vw black;
+    font-size: 0.7vw;
+}
+#sb-table tr td {
+    text-shadow: 0 0 0.2vw black;
+    font-size: 0.7vw;
+    height: 1.4vw;
+}
+#sb-table tr th:nth-child(1) {
+    width: 2vw;
+}
+#sb-table tr th:nth-child(2) {
+    width: 17vw;
+}
+#sb-table tr td:nth-child(2) {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+}
+#sb-table tr th:nth-child(3) {
+    width: 3vw;
+}
+#sb-table tr th:nth-child(4) {
+    width: 1.5vw;
+}
+#sb-table tr th:nth-child(5) {
+    width: 1.5vw;
+}
+#sb-table tr th:nth-child(6) {
+    width: 2vw;
+}
+#sb-table tr th:nth-child(7) {
+    width: 2vw;
+}
+#sb-table tr td img {
+    height: 1.2vw;
+    width: 1.2vw;
+}
+#sb-score {
+    margin: 1vw auto;
+    width: max-content;
+    font-family: 'Dela Gothic One';
+    color: #fff;
+    font-size: 1vw;
+    text-shadow: 0 0 0.2vw black;
+}
+#sb-ct {
+    color: var(--ct)
+}
+#sb-t {
+    color: var(--t)
+}
+.table-ct tr td {
+    color: var(--ct) !important
+}
+.table-t tr td {
+    color: var(--t) !important
+}
+.table-ct tr td {
+    background-color: #083b6b4d;
+}
+.table-current-player-ct td {
+    background-color: #0f62af4d !important;
+}
+.table-t tr td {
+    background-color: #6b4c084d;
+}
+.table-current-player-t td {
+    background-color: #a879134d !important;
+}
+/* End of scoreboard */
+/* Hud */
+#hud-wrapper {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 3.5vw;
+    user-select: none;
+}
+#hud-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.hud-text {
+    font-size: 1.3vw;
+    font-weight: bolder;
+    font-family: 'Dela Gothic One';
+    color: #778bff83;
+    text-shadow: 0 0 0.4vw black;
+}
+#hud-money {
+    position: absolute;
+    left: 1vw;
+}
